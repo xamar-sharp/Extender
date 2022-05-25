@@ -37,11 +37,13 @@ namespace Extender
         {
             if (useNightTheme || DateTime.Now.Hour >= 18)
             {
-                dns.SetDynamicResource(StyleProperty, "NightEntry");            
+                dns.SetDynamicResource(StyleProperty, "NightEntry");
+                root.SetDynamicResource(StyleProperty, "NightStackLayout");
             }
             else
             {
                 dns.SetDynamicResource(StyleProperty, "DayEntry");
+                root.SetDynamicResource(StyleProperty, "DayStackLayout");
             }
         }
         private async void dns_Completed(object sender, EventArgs e)

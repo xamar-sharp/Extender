@@ -46,7 +46,7 @@ namespace Extender
         {
             if (useNightTheme || DateTime.Now.Hour >= 18)
             {
-                background.Source = "mailnight.jpg";
+                background.Source = "nightsmtp.jpg";
                 email.SetDynamicResource(StyleProperty, "NightEntry");
                 password.SetDynamicResource(StyleProperty, "NightEntry");
                 to.SetDynamicResource(StyleProperty, "NightEntry");   
@@ -59,7 +59,7 @@ namespace Extender
             }
             else
             {
-                background.Source = "daymail.jpg";
+                background.Source = "daysmtp.jpg";
                 email.SetDynamicResource(StyleProperty, "DayEntry");
                 password.SetDynamicResource(StyleProperty, "DayEntry");
                 to.SetDynamicResource(StyleProperty, "DayEntry");

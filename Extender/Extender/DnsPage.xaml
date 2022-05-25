@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Extender.DnsPage" xmlns:ex="clr-namespace:Extender.MarkupExtensions">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="root">
             <Entry x:Name="dns" Completed="dns_Completed"/>
             <ListView ItemsSource="{Binding Addresses}" CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>

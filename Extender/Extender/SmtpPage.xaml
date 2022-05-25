@@ -11,7 +11,7 @@
                 <Entry x:Name="to" ReturnCommand="{Binding SmtpRequest.ToEnteredCommand}" ReturnCommandParameter="{x:Reference to}" AbsoluteLayout.LayoutBounds="0.1,0.2,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
                 <Editor x:Name="message" Completed="message_Completed" AbsoluteLayout.LayoutBounds="0.1,0.4,0.99,0.3" AbsoluteLayout.LayoutFlags="All"/>
                 <Button x:Name="addFileAttachment" Command="{Binding Mails.AddCommand}" AbsoluteLayout.LayoutBounds="0,0.7,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
-                <ListView x:Name="attachments" ItemsSource="{Binding Mails.Mails}" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0,0.85,1,0.15" AbsoluteLayout.LayoutFlags="All">
+                <ListView x:Name="attachments" ItemsSource="{Binding Mails.Mails}" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0,0.85,1,0.13" AbsoluteLayout.LayoutFlags="All">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

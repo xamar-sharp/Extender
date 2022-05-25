@@ -29,7 +29,7 @@ namespace Extender.Commands
                     {
                         Extension = extension,
                         FileName = Path.GetFileNameWithoutExtension(result.FullPath),
-                        Length = File.ReadAllBytes(result.FullPath).Length / (double)(1024*1024/1024),
+                        Length = File.ReadAllBytes(result.FullPath).Length / (double)(1024*1024),
                         PhysicalPath=result.FullPath
                     });
                 }
