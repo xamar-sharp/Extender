@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.ProcessPage">
+    <RefreshView x:Name="refresher" Command="{Binding RefreshCommand}">
+        <ScrollView x:Name="scroll">
+            <StackLayout x:Name="root">
+                <Label x:Name="title" FontAttributes="Bold" FontSize="Large"/>
+                <Picker x:Name="filterPicker" SelectedIndexChanged="filterPicker_SelectedIndexChanged"/>
+                <Button x:Name="startProcess" Style="{DynamicResource DayButton}" Command="{Binding EnterToStartProcessCommand}"/>
+                <FlexLayout x:Name="statistic" Direction="Column" Wrap="NoWrap" AlignContent="SpaceBetween" JustifyContent="SpaceBetween" AlignItems="Start"/>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+
+</ContentPage>

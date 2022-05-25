@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddAttachmentText" xml:space="preserve">
+    <value>ADD FILE</value>
+  </data>
+  <data name="ArgumentListPlaceholder" xml:space="preserve">
+    <value>Arguments(separator ;)</value>
+  </data>
+  <data name="ArgumentListTitle" xml:space="preserve">
+    <value>Argument list</value>
+  </data>
+  <data name="CancelTitle" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ConnectionProfiles" xml:space="preserve">
+    <value>Active connection profiles:</value>
+  </data>
+  <data name="CredentialsTitle" xml:space="preserve">
+    <value>Credentials</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="DnsPageTitle" xml:space="preserve">
+    <value>DNS</value>
+  </data>
+  <data name="DnsPlaceholder" xml:space="preserve">
+    <value>Enter domain name...</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>Your email</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="FailedHttpResponseTitle" xml:space="preserve">
+    <value>FAIL</value>
+  </data>
+  <data name="FailedMail" xml:space="preserve">
+    <value>Messaging Failed</value>
+  </data>
+  <data name="FileNamePlaceholder" xml:space="preserve">
+    <value>Path to process .exe file...</value>
+  </data>
+  <data name="FileNameTitle" xml:space="preserve">
+    <value>Process file path</value>
+  </data>
+  <data name="GetTitle" xml:space="preserve">
+    <value>GET</value>
+  </data>
+  <data name="HostPlaceholder" xml:space="preserve">
+    <value>Enter here local IP...</value>
+  </data>
+  <data name="HttpCrudTitle" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HttpResponseError" xml:space="preserve">
+    <value>Error via request was detected!</value>
+  </data>
+  <data name="HttpResponseTitle" xml:space="preserve">
+    <value>Http Response</value>
+  </data>
+  <data name="InstalledPath" xml:space="preserve">
+    <value>file installed </value>
+  </data>
+  <data name="IsServerTitle" xml:space="preserve">
+    <value>Is Server:</value>
+  </data>
+  <data name="JsonPlaceholder" xml:space="preserve">
+    <value>Enter here json...</value>
+  </data>
+  <data name="LoadFileError" xml:space="preserve">
+    <value>uri is invalid</value>
+  </data>
+  <data name="MailPageTitle" xml:space="preserve">
+    <value>SMTP</value>
+  </data>
+  <data name="MailSended" xml:space="preserve">
+    <value>Mail was sended!</value>
+  </data>
+  <data name="MessageMailPlaceholder" xml:space="preserve">
+    <value>Enter here content of mail (may be html)...</value>
+  </data>
+  <data name="MultiNetTitle" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="NetPagePlaceholder" xml:space="preserve">
+    <value>Web-path to file...</value>
+  </data>
+  <data name="NetPageTitle" xml:space="preserve">
+    <value>LOAD</value>
+  </data>
+  <data name="NetworkAccess" xml:space="preserve">
+    <value>Network access:</value>
+  </data>
+  <data name="NetworkPageTitle" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="NoAccess" xml:space="preserve">
+    <value>no access</value>
+  </data>
+  <data name="NoNetworkAccess" xml:space="preserve">
+    <value>No Internet connection!!!</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Email Password</value>
+  </data>
+  <data name="PasswordUserNamePlaceholder" xml:space="preserve">
+    <value>Password/Username(via ;)</value>
+  </data>
+  <data name="PhysicalMemoryTitle" xml:space="preserve">
+    <value>Физическая память (в байтах)</value>
+  </data>
+  <data name="PortPlaceholder" xml:space="preserve">
+    <value>Enter here local port...</value>
+  </data>
+  <data name="PostTitle" xml:space="preserve">
+    <value>POST</value>
+  </data>
+  <data name="ProcessCodeExecutionTitle" xml:space="preserve">
+    <value>Время исполнения кода</value>
+  </data>
+  <data name="ProcessExitTimeTitle" xml:space="preserve">
+    <value>Время завершения процесса</value>
+  </data>
+  <data name="ProcessIdTitle" xml:space="preserve">
+    <value>Идентификатор процесса</value>
+  </data>
+  <data name="ProcessInfo" xml:space="preserve">
+    <value>Process information:</value>
+  </data>
+  <data name="ProcessKill" xml:space="preserve">
+    <value>KILL</value>
+  </data>
+  <data name="ProcessMachineNameTitle" xml:space="preserve">
+    <value>Машина запустившая процесс</value>
+  </data>
+  <data name="ProcessMainWindowTitle" xml:space="preserve">
+    <value>Заголовок окна процесса</value>
+  </data>
+  <data name="ProcessNameTitle" xml:space="preserve">
+    <value>Имя процесса</value>
+  </data>
+  <data name="ProcessPageTitle" xml:space="preserve">
+    <value>PROCESS</value>
+  </data>
+  <data name="ProcessPriorityTitle" xml:space="preserve">
+    <value>Приоритет процесса</value>
+  </data>
+  <data name="ProcessRespondingTitle" xml:space="preserve">
+    <value>Отвечает ли процесс</value>
+  </data>
+  <data name="ProcessStart" xml:space="preserve">
+    <value>Start Process</value>
+  </data>
+  <data name="ProcessStartButton" xml:space="preserve">
+    <value>GO</value>
+  </data>
+  <data name="ProcessStartTimeTitle" xml:space="preserve">
+    <value>Время запуска процесса</value>
+  </data>
+  <data name="ProcessThreadCodeExecutionTitle" xml:space="preserve">
+    <value>Время исполнения кода у потока</value>
+  </data>
+  <data name="ProcessThreadIdTitle" xml:space="preserve">
+    <value>Идентификатор потока процесса</value>
+  </data>
+  <data name="ProcessThreadPriorityTitle" xml:space="preserve">
+    <value>Приоритет потока процесса</value>
+  </data>
+  <data name="ProcessThreadStateTitle" xml:space="preserve">
+    <value>Состояние потока процесса</value>
+  </data>
+  <data name="ProcessThreadsTitle" xml:space="preserve">
+    <value>Счетчик потоков процесса</value>
+  </data>
+  <data name="ProcessThreadTotalExecutionTitle" xml:space="preserve">
+    <value>Обшее время потока процесса</value>
+  </data>
+  <data name="ProcessThreadWaitReasonTitle" xml:space="preserve">
+    <value>Причина ожидания потока процесса</value>
+  </data>
+  <data name="ProcessTitle" xml:space="preserve">
+    <value>Ordered processes:</value>
+  </data>
+  <data name="ProcessTotalExecutionTitle" xml:space="preserve">
+    <value>Общее время процесса</value>
+  </data>
+  <data name="PutTitle" xml:space="preserve">
+    <value>PUT</value>
+  </data>
+  <data name="RemoteHostPlaceholder" xml:space="preserve">
+    <value>Enter here remote IP...</value>
+  </data>
+  <data name="RemotePortPlaceholder" xml:space="preserve">
+    <value>Enter here remote port...</value>
+  </data>
+  <data name="ResponseContentTitle" xml:space="preserve">
+    <value>RESPONSE STRING</value>
+  </data>
+  <data name="ResponseHeadersTitle" xml:space="preserve">
+    <value>HEADERS</value>
+  </data>
+  <data name="ResponseStatusCodeTitle" xml:space="preserve">
+    <value>STATUS CODE</value>
+  </data>
+  <data name="ResponseUriTitle" xml:space="preserve">
+    <value>REQUEST URI</value>
+  </data>
+  <data name="RuntimePageTitle" xml:space="preserve">
+    <value>Runtime</value>
+  </data>
+  <data name="RuntimeTitle" xml:space="preserve">
+    <value>Runtime</value>
+  </data>
+  <data name="SaveClipboard" xml:space="preserve">
+    <value>SAVE TO CLIPBOARD</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>SELECT FILE CONTENT</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>SEND MAIL</value>
+  </data>
+  <data name="SendModel" xml:space="preserve">
+    <value>SEND REQUEST</value>
+  </data>
+  <data name="SocketDataPlaceholder" xml:space="preserve">
+    <value>Enter here data to send (Server as Response,Client as Request)...</value>
+  </data>
+  <data name="SocketError" xml:space="preserve">
+    <value>Socket error was detected!</value>
+  </data>
+  <data name="SocketPageTitle" xml:space="preserve">
+    <value>TCP</value>
+  </data>
+  <data name="SocketResponseTitle" xml:space="preserve">
+    <value>Session response</value>
+  </data>
+  <data name="SocketStartTitle" xml:space="preserve">
+    <value>CONNECT</value>
+  </data>
+  <data name="SuccessHttpResponseTitle" xml:space="preserve">
+    <value>SUCCESS</value>
+  </data>
+  <data name="SuccessMail" xml:space="preserve">
+    <value>Success Communication</value>
+  </data>
+  <data name="Tcp" xml:space="preserve">
+    <value>TCP</value>
+  </data>
+  <data name="TokenPlaceholder" xml:space="preserve">
+    <value>Enter here JWT-token...</value>
+  </data>
+  <data name="ToPlaceholder" xml:space="preserve">
+    <value>Emails to send (separator ,)</value>
+  </data>
+  <data name="Udp" xml:space="preserve">
+    <value>UDP</value>
+  </data>
+  <data name="UriPlaceholder" xml:space="preserve">
+    <value>Enter here request uri...</value>
+  </data>
+  <data name="UseCredentials" xml:space="preserve">
+    <value>Use credentials</value>
+  </data>
+  <data name="VirtualMemoryTitle" xml:space="preserve">
+    <value>Виртуальная память (в байтах)</value>
+  </data>
+  <data name="WindowStylePlaceholder" xml:space="preserve">
+    <value>MAX,MIN,HIDDEN,DEFAULT</value>
+  </data>
+  <data name="WindowStyleTitle" xml:space="preserve">
+    <value>Window Style</value>
+  </data>
+</root>

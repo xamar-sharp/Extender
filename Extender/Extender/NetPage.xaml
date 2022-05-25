@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.NetPage" xmlns:local="clr-namespace:Extender.Converters;assembly=Extender"
+             xmlns:ex="clr-namespace:Extender.MarkupExtensions;assembly=Extender">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NegateConverter x:Key="negateConverter"/>
+            <local:ErrorStateConverter x:Key="errorState"/>
+            <local:InstalledPathConverter x:Key="installedPath"/>
+            <local:SuccessLoadConverter x:Key="successLoad"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout x:Name="root" Spacing="0" Style="{DynamicResource DayStackLayout}">
+            <Entry x:Name="search" Style="{DynamicResource DaySearchBar}" ReturnCommand="{Binding DownloadList.SearchCommand}" ReturnCommandParameter="{x:Reference search}"/>
+            <ListView x:Name="downloads" ItemsSource="{Binding DownloadList.Items}" CachingStrategy="RecycleElement" HasUnevenRows="True" Style="{DynamicResource DayListView}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="0" Orientation="Vertical">
+                                <Label x:Name="uri" Text="{Binding Uri}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference uri}}"/>
+                                <Label x:Name="except" IsVisible="{Binding Exceptional}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference except}}" Text="{Binding .,Converter={StaticResource errorState}}"/>
+                                <ProgressBar x:Name="prog" ProgressColor="{Binding .,Converter={StaticResource successLoad}}" Progress="{Binding CurrentProgress}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference prog}}">
+                                    <ProgressBar.Triggers>
+                                        <DataTrigger TargetType="ProgressBar" Binding="{Binding Exceptional}" Value="True">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="ProgressColor" Value="Red"/>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </ProgressBar.Triggers>
+                                </ProgressBar>
+                                <ActivityIndicator x:Name="act" IsVisible="{Binding Installed,Converter={StaticResource negateConverter}}" IsRunning="{Binding Installed,Converter={StaticResource negateConverter}}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference path}}"/>
+                                <Label x:Name="path" Text="{Binding InstalledPath,Converter={StaticResource installedPath}}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference act}}" IsVisible="{Binding Installed}"/>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem IconImageSource="trash.png" Command="{Binding Parent.RemoveCommand}" CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

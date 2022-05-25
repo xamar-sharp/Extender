@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.HttpResponsePage" xmlns:local="clr-namespace:Extender.Converters;assembly=Extender">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StatusColorConverter x:Key="statusCodeSuccess"/>
+            <local:StatusTextConverter x:Key="statusCodeText"/>
+            <local:ContentImageConverter x:Key="isImageResponse"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView x:Name="rootScroll" Orientation="Vertical" Style="{DynamicResource DayScrollView}">
+            <StackLayout x:Name="root" Style="{DynamicResource DayStackLayout}">
+                <Label x:Name="statusLabel" FontSize="Large" Text="{Binding Response,Converter={StaticResource statusCodeText}}" HorizontalTextAlignment="Center" TextColor="{Binding Response,Converter={StaticResource statusCodeSuccess}}" Style="{DynamicResource DayLabel}"/>
+                <ScrollView x:Name="descriptionScroll" Orientation="Vertical" Style="{DynamicResource DayScrollView}" HeightRequest="300">
+                    <Editor x:Name="responseLabel" AutoSize="TextChanges" IsSpellCheckEnabled="False" IsReadOnly="True" Style="{DynamicResource DayEntry}"/>
+                </ScrollView>
+                <Image x:Name="descriptionImage" HeightRequest="300" WidthRequest="400" Aspect="Fill" IsVisible="{Binding Response,Converter={StaticResource isImageResponse}}" Source="{Binding Response.RequestMessage.RequestUri}"/>
+                <BoxView x:Name="separator" WidthRequest="800" HeightRequest="10" Style="{DynamicResource DayBoxView}"/>
+                <ScrollView x:Name="headersScroll" Orientation="Vertical" Style="{DynamicResource DayScrollView}" HeightRequest="300">
+                    <Editor x:Name="headerLabel" AutoSize="TextChanges" IsSpellCheckEnabled="False" IsReadOnly="True" Style="{DynamicResource DayEntry}"/>
+                </ScrollView>
+                <Button x:Name="saveClipboard" Style="{DynamicResource DayButton}" Command="{Binding ClipboardSaveCommand}" CommandParameter="{Binding Response}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

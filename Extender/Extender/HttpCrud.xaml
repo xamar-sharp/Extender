@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="httpPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.HttpCrud" xmlns:local="clr-namespace:Extender.Converters;assembly=Extender">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MethodImageConverter x:Key="methodImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout x:Name="root" Style="{DynamicResource DayStackLayout}">
+            <Entry x:Name="requestUri" Style="{DynamicResource DayEntry}" Completed="requestUri_Completed" ReturnCommand="{Binding HttpRequest.UriEnteredCommand}" ReturnCommandParameter="{x:Reference requestUri}"/>
+            <Button x:Name="httpMethod" Style="{DynamicResource DayButton}" Command="{Binding HttpRequest.MethodChangedCommand}" CommandParameter="{x:Reference httpMethod}"/>
+            <CheckBox x:Name="useAuth" Style="{DynamicResource DayCheckBox}" IsChecked="False"/>
+            <Entry x:Name="authToken" IsVisible="{Binding IsChecked,Source={x:Reference useAuth}}" Style="{DynamicResource DayEntry}" ReturnCommand="{Binding HttpRequest.AuthTokenEnteredCommand}" ReturnCommandParameter="{x:Reference authToken}"/>
+            <Entry x:Name="forPostOrPut" IsVisible="{Binding Text,Converter={StaticResource methodImage},Source={x:Reference httpMethod}}" Style="{DynamicResource DayEntry}" ReturnCommand="{Binding HttpRequest.InputContentEnteredCommand}" ReturnCommandParameter="{x:Reference forPostOrPut}"/>
+            <Button x:Name="forPostOrPutFile" IsVisible="{Binding Text,Converter={StaticResource methodImage},Source={x:Reference httpMethod}}" Command="{Binding HttpRequest.SelectFileCommand}" CommandParameter="{x:Reference forPostOrPut}" Style="{DynamicResource DayButton}"/>
+            <Button x:Name="sendModel" VerticalOptions="EndAndExpand" Command="{Binding SendCommand}" Style="{DynamicResource DayButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

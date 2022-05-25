@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.SmtpPage" xmlns:ex="clr-namespace:Extender.MarkupExtensions">
+    <ContentPage.Content>
+        <StackLayout>
+            <AbsoluteLayout x:Name="root">
+                <Image x:Name="background" AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="Fill" AbsoluteLayout.LayoutFlags="All"/>
+                <Entry x:Name="email" ReturnCommand="{Binding SmtpRequest.EmailEnteredCommand}" ReturnCommandParameter="{x:Reference email}" AbsoluteLayout.LayoutBounds="0.1,0,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Entry x:Name="password" ReturnCommand="{Binding SmtpRequest.PasswordEnteredCommand}" ReturnCommandParameter="{x:Reference password}" AbsoluteLayout.LayoutBounds="0.1,0.1,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Entry x:Name="to" ReturnCommand="{Binding SmtpRequest.ToEnteredCommand}" ReturnCommandParameter="{x:Reference to}" AbsoluteLayout.LayoutBounds="0.1,0.2,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Editor x:Name="message" Completed="message_Completed" AbsoluteLayout.LayoutBounds="0.1,0.4,0.99,0.3" AbsoluteLayout.LayoutFlags="All"/>
+                <Button x:Name="addFileAttachment" Command="{Binding Mails.AddCommand}" AbsoluteLayout.LayoutBounds="0,0.7,0.99,0.1" AbsoluteLayout.LayoutFlags="All"/>
+                <ListView x:Name="attachments" ItemsSource="{Binding Mails.Mails}" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0,0.85,1,0.15" AbsoluteLayout.LayoutFlags="All">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout x:Name="vertRoot" Orientation="Vertical" StyleClass="{ex:TimeStyleMarkup Element={x:Reference vertRoot}}">
+                                    <StackLayout x:Name="leftroot" Orientation="Horizontal" StyleClass="{ex:TimeStyleMarkup Element={x:Reference leftroot}}">
+                                        <Label x:Name= "fileName" Text="{Binding FileName}" FontSize="Medium" StyleClass="{ex:TimeStyleMarkup Element={x:Reference fileName}}"/>
+                                        <Label x:Name= "size" Text="{Binding Length,StringFormat='{0}Mb'}" FontSize="Medium" StyleClass="{ex:TimeStyleMarkup Element={x:Reference size}}"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="rightRoot" Orientation="Horizontal" StyleClass="{ex:TimeStyleMarkup Element={x:Reference rightRoot}}">
+                                        <Label x:Name="ext" Text="{Binding Extension}" FontSize="Medium" StyleClass="{ex:TimeStyleMarkup Element={x:Reference ext}}"/>
+                                        <Label x:Name="supports" Text="{Binding Supports}" FontSize="Medium" StyleClass="{ex:TimeStyleMarkup Element={x:Reference supports}}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem IconImageSource="trash.png" Command="{Binding Parent.RemoveCommand}" CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button x:Name="send" Command="{Binding InitAndSendCommand}" AbsoluteLayout.LayoutBounds="0,0.98,1,0.1" AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

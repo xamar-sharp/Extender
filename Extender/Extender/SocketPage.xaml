@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.SocketPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="root" Style="{DynamicResource DayStackLayout}">
+            <Entry x:Name="host" ReturnCommand="{Binding SocketRequest.HostEnteredCommand}" MaxLength="40" ReturnCommandParameter="{x:Reference host}" Style="{DynamicResource DayEntry}"/>
+            <Entry x:Name="port" ReturnCommand="{Binding SocketRequest.PortEnteredCommand}" MaxLength="5" ReturnCommandParameter="{x:Reference port}" Style="{DynamicResource DayEntry}"/>
+            <Entry x:Name="remotehost" ReturnCommand="{Binding SocketRequest.RemoteHostEnteredCommand}" MaxLength="40" ReturnCommandParameter="{x:Reference remotehost}" Style="{DynamicResource DayEntry}"/>
+            <Entry x:Name="remoteport" ReturnCommand="{Binding SocketRequest.RemotePortEnteredCommand}" MaxLength="5" ReturnCommandParameter="{x:Reference remoteport}" Style="{DynamicResource DayEntry}"/>
+            <RadioButton x:Name="tcp" GroupName="protocols" Value="tcp" IsChecked="False" CheckedChanged="tcp_CheckedChanged"/>
+            <RadioButton x:Name="udp" GroupName="protocols" Value="udp" IsChecked="False" CheckedChanged="udp_CheckedChanged"/>
+            <StackLayout x:Name="isServerStack" Orientation="Horizontal" Spacing="220">
+                <Label x:Name="isServer" FontSize="Large"/>
+                <CheckBox x:Name="isServerCheckBox" IsChecked="False" CheckedChanged="isServerCheckBox_CheckedChanged"/>
+            </StackLayout>
+            <Editor x:Name="content" AutoSize="TextChanges" IsSpellCheckEnabled="False" Keyboard="Chat" Completed="content_Completed"/>
+            <Button x:Name="connect" Command="{Binding SocketRequest.SendCommand}" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

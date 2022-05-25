@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.MainMenu"
+             xmlns:pages="clr-namespace:Extender" xmlns:local="clr-namespace:Extender;assembly=Extender">
+    <Shell.FlyoutHeader>
+        <Image Aspect="Fill" HeightRequest="200" WidthRequest="300" Source="headerday.jpg"/>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <Label Text="made by xamacoredevelopment@gmail.com, 25.05.2022" FontSize="Medium" TextDecorations="Underline"/>
+    </Shell.FlyoutFooter>
+    <Shell.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame Padding="0" CornerRadius="90" HeightRequest="90" WidthRequest="90">
+                            <Image Aspect="Fill" Source="{Binding Icon}"/>
+                        </Frame>
+                        <Label Text="{Binding Title}" FontSize="Title" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </DataTemplate>
+            </Shell.ItemTemplate>
+    <Shell.MenuItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame Padding="0" CornerRadius="90" HeightRequest="90" WidthRequest="90">
+                            <Image Aspect="Fill" Source="{Binding Icon}"/>
+                        </Frame>
+                        <Label Text="{Binding Title}" FontSize="Large"/>
+                    </StackLayout>
+                </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <FlyoutItem Title="{Binding NetworkPageTitle}" FlyoutDisplayOptions="AsSingleItem" Icon="computer.png">
+        <Tab>
+            <ShellContent>
+                <local:MultiNetPage/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="{Binding RuntimePageTitle}" FlyoutDisplayOptions="AsSingleItem" Icon="coding.png">
+        <Tab>
+            <ShellContent>
+                <local:RuntimePage/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+</Shell>

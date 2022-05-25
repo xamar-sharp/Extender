@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.DnsPage" xmlns:ex="clr-namespace:Extender.MarkupExtensions">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="dns" Completed="dns_Completed"/>
+            <ListView ItemsSource="{Binding Addresses}" CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label x:Name="presenter" Text="{Binding .}" StyleClass="{ex:TimeStyleMarkup Element={x:Reference presenter}}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

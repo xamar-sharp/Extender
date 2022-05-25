@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extender.ProcessStartPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView x:Name="tableView" Style="{DynamicResource DayTableView}" Intent="Form">
+                <TableRoot x:Name="root">
+                    <TableSection x:Name="processInfo">
+                        <EntryCell x:Name="processFileName" Completed="processFileName_Completed"/>
+                        <EntryCell x:Name="processArguments" Completed="processArguments_Completed"/>
+                        <EntryCell x:Name="processWindowStyle" Completed="processWindowStyle_Completed"/>
+                        <SwitchCell x:Name="useAuth" OnChanged="useAuth_OnChanged"/>
+                    </TableSection>
+                    <TableSection x:Name="credentialInfo">
+                        <EntryCell x:Name="passwordUsername" IsEnabled="{Binding On,Source={x:Reference useAuth}}" Completed="passwordUsername_Completed"/>
+                        <ViewCell>
+                            <Button x:Name="startProcess" Style="{DynamicResource DayButton}" Command="{Binding StartAndPopCommand}"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
