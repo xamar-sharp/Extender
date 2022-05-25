@@ -16,7 +16,7 @@
     <!--<item name="colorAccent">#FF4081</item>-->
   </style>
 	<style name="Splash" parent="android:Theme">
-		<item name="android:windowBackground">@drawable/splash</item>
+		<item name="android:windowBackground">@drawable/mailnight</item>
 		<item name="android:windowNoTitle">True</item>
 	</style>
 </resources>
