@@ -13,4 +13,4 @@ git clone https://github.com/xamar-sharp/Extender.git
 при наличии установленных на вашем устройстве платформы .NET5 и фреймворка Xamarin.Forms.
 Приложение спроектировано с учетом принципов MVVM.
 ## Лицензия 
-MIT, Apache 2.0
+MIT, Apache License 2.0
